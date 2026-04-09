@@ -65,3 +65,12 @@ button:active {
 #visor {
   grid-column: span 4;
 }
+
+.operador {
+  background-color: rgba(233, 152, 2, 0.973);
+  color: white;
+}
+
+.operador:hover {
+  background-color: darkorange;
+}
