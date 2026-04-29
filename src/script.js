@@ -143,3 +143,50 @@ botoes.forEach(botao => {
     }
   });
 });
+
+document.addEventListener("keydown", (e) => {
+  const tecla = e.key;
+
+  // Números e ponto
+  if (!isNaN(tecla) || tecla === ".") {
+    adicionar(tecla);
+    return;
+  }
+
+  // Operadores
+  if (["+", "-", "*", "/"].includes(tecla)) {
+    adicionar(tecla);
+    return;
+  }
+
+  // Enter = calcular
+  if (tecla === "Enter") {
+    e.preventDefault(); // evita comportamento padrão
+    calcular();
+    return;
+  }
+
+  // Delete = apagar
+  if (tecla === "Backspace") {
+    apagar();
+    return;
+  }
+
+  // Esc = limpar
+  if (tecla === "Escape") {
+    limpar();
+    return;
+  }
+
+  // R = raiz
+  if (tecla === "r") { // raiz
+    raiz();
+    return;
+  }
+
+  // Q = quadrado 
+  if (tecla === "q") { // quadrado
+    quadrado();
+    return;
+  }
+});
