@@ -1,5 +1,5 @@
 const visor = document.getElementById("visor");
-const botoes = document.querySelectorAll("button");
+const botoes = document.querySelectorAll(".calculator button");
 
 let expressao = "";
 
@@ -190,3 +190,25 @@ document.addEventListener("keydown", (e) => {
     return;
   }
 });
+
+const botaoTema = document.getElementById("toggleTema");
+
+// carregar tema salvo
+if (localStorage.getItem("tema") === "light") {
+  document.body.classList.add("light");
+  botaoTema.textContent = "☀️";
+}
+
+botaoTema.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  const modoClaro = document.body.classList.contains("light");
+
+  // muda ícone
+  botaoTema.textContent = modoClaro ? "☀️" : "🌙";
+
+  // salva no navegador
+  localStorage.setItem("tema", modoClaro ? "light" : "dark");
+});
+
+

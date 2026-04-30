@@ -74,3 +74,98 @@ button:active {
 .operador:hover {
   background-color: darkorange;
 }
+
+:root {
+  --bg: #1e1e1e;
+  --calc-bg: #2a2a2a;
+  --visor-bg: #1e1e1e;
+  --text: #ffffff;
+  --btn-bg: #3a3a3a;
+  --btn-hover: #4a4a4a;
+}
+
+/* MODO CLARO */
+.light {
+  --bg: #f4f4f4;
+  --calc-bg: #ffffff;
+  --visor-bg: #eaeaea;
+  --text: #000000;
+  --btn-bg: #dcdcdc;
+  --btn-hover: #cfcfcf;
+}
+
+/* Fundo */
+body {
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: 0.3s;
+}
+
+/* Calculadora */
+.calculator {
+  width: 320px;
+  padding: 20px;
+  background-color: var(--calc-bg);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Visor */
+#visor {
+  grid-column: span 4;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--visor-bg);
+  color: var(--text);
+  font-size: 28px;
+  text-align: right;
+  padding: 10px;
+}
+
+/* Botões */
+button {
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  color: var(--text);
+  background-color: var(--btn-bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Operadores */
+.operador {
+  background-color: orange;
+  color: white;
+}
+
+/* Botão de tema */
+#toggleTema {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
